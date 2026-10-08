@@ -210,9 +210,9 @@ with t_replay:
     year = st.radio("Year", yrs_bt, index=yrs_bt.index(2024), horizontal=True, key="replay_year")
     g = BT[BT.year == year].sort_values("date").reset_index(drop=True)
     labels = [f"{d:%d %b}" for d in g.date]
-    pos = st.select_slider("Drag through the year", options=list(range(len(g))), value=min(30, len(g) - 1),
-                           format_func=lambda i: labels[i], key=f"replay_week_{year}")
-    now = g.iloc[pos]
+    pick_wk = st.select_slider("Drag through the year", options=labels, value=labels[min(30, len(g) - 1)],
+                               key=f"replay_week_{year}")
+    now = g.iloc[labels.index(pick_wk)]
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=g.date, y=g.cases, name="Real cases", line=dict(color=BLUE, width=2.5),

@@ -1,7 +1,7 @@
 # Streamlit Community Cloud installs this file (it sits next to app.py).
-# Works on Python 3.10+. scikit-learn and statsmodels stay exact because the
+# Works on Python 3.10-3.14 (Streamlit 1.51 cannot install on 3.14, so newer is allowed). scikit-learn and statsmodels stay exact because the
 # saved model (models/dengue/denguewatch.joblib) was built with these versions.
-streamlit==1.51.0
+streamlit>=1.51,<2
 scikit-learn==1.7.2
 statsmodels==0.14.5
 numpy>=2.0,<2.4
