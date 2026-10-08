@@ -1,0 +1,11 @@
+# Streamlit Community Cloud installs this file (it sits next to app.py).
+# Versions match the ones the saved model was built with.
+streamlit==1.51.0
+pandas==2.3.3
+numpy==2.3.5
+plotly==6.3.0
+joblib==1.5.2
+statsmodels==0.14.5
+scikit-learn==1.7.2
+scipy==1.16.3
+patsy==1.0.1
